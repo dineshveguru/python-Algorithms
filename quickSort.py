@@ -32,8 +32,8 @@ def quicksort(start, end, arr):
     if start >= end:
         return
     boundary = partition(arr, start, end)
-    quicksort(start, boundary - 1, arr)         #recursively calling the array and sorting the right part of pivot
-    quicksort(boundary + 1, end, arr)           #recursively calling the array and sorting the left part of pivot
+    quicksort(start, boundary - 1, arr)  # recursively calling the array and sorting the right part of pivot
+    quicksort(boundary + 1, end, arr)  # recursively calling the array and sorting the left part of pivot
 
 
 quicksort(0, len(a) - 1, a)

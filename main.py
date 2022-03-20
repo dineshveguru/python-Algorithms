@@ -33,5 +33,17 @@ def merge(left, right, result):
     return result
 
 
-print(sort([8, 9, 4, 1, 1, 4, 6, 7, 6, 7, 9, 1, 2]))
+a = []
+n = int(input("enter how many elements : "))
+for i in range(n):
+    a.append(int(input(f"enter {i+1} element : ")))
+
+print("array before sorting >")
+print(a)
+sort(a)
+print("array after sorting >")
+print(a)
+
+
+
 
