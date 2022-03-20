@@ -1,8 +1,4 @@
-def sort(arr, start, end):
-    while start < end:
-        boundary = partition(arr, start, end)
-        sort(arr, start, boundary - 1)
-        sort(arr, boundary + 1, end - 1)
+a = [1, 1, 1, 8, 2]
 
 
 def swap(arr, a, b):
@@ -12,13 +8,22 @@ def swap(arr, a, b):
 
 
 def partition(arr, start, end):
-    b = 0
+    b = start - 1
     pivot = arr[end]
     for i in range(start, end + 1):
         if arr[i] <= pivot:
-            swap(arr, i, b)
-            b = b + 1
-    return b - 1
+            b += 1
+            swap(arr, b, i)
+    return b
 
-a = [15, 6, 3, 1, 22, 10, 13]
-print(sort(a, 0, len(a) - 1))
+
+def quicksort(start, end, arr):
+    if start >= end:
+        return
+    boundary = partition(arr, start, end)
+    quicksort(start, boundary - 1, arr)
+    quicksort(boundary + 1, end, arr)
+
+
+quicksort(0, len(a) - 1, a)
+print(a)
