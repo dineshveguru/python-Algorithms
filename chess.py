@@ -23,5 +23,3 @@ for i in range(len(d)):
         print(p1)
     if p2[0] in row and p2[1] in row:
         print(p2)
-
-
